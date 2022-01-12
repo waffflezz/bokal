@@ -50,10 +50,11 @@ class hotel_ui(QWidget, Ui_Form):
             self.current_button.setStyleSheet('background: rgb(113, 105, 182);')
 
     def cancel_arend(self):
-        self.terminal.hotel.arend_rooms.remove(self.current_button.room)
-        self.current_button.room.state = False
-        self.current_button.setStyleSheet('background: rgb(114, 213, 147);')
-        self.textBrowser.setText(self.current_button.room.__str__())
+        if self.current_button.room in self.terminal.hotel.arend_rooms:
+            self.terminal.hotel.arend_rooms.remove(self.current_button.room)
+            self.current_button.room.state = False
+            self.current_button.setStyleSheet('background: rgb(114, 213, 147);')
+            self.textBrowser.setText(self.current_button.room.__str__())
 
 
 if __name__ == '__main__':

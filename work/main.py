@@ -90,7 +90,9 @@ class Terminal:
 
 def main():
     terminal = Terminal()
-    terminal.arend_room(1)
+    terminal.arend_room(randint(1, 50))
+    terminal.arend_room(randint(1, 50))
+    terminal.arend_room(randint(1, 50))
     terminal.show_free()
     print(terminal.show_arend())
 
